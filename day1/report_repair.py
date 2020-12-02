@@ -1,6 +1,5 @@
 '''
-PART 1
-
+--- Part One ---
 Specifically, they need you to find the two entries that sum to 2020 and then multiply those two numbers together.
 
 For example, suppose your expense report contained the following:
@@ -16,6 +15,7 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
 '''
 
+# reading the input
 nums = []
 with open("input.txt", 'r') as f:
     for line in f:
@@ -34,8 +34,7 @@ def part1(nums, target):
 
 
 '''
-PART 2
-
+--- Part Two ---
 The Elves in accounting are thankful for your help; one of them even offers you a starfish coin they had left over from a past vacation. They offer you a second one if you can find three numbers in your expense report that meet the same criteria.
 
 Using the above example again, the three entries that sum to 2020 are 979, 366, and 675. Multiplying them together produces the answer, 241861950.
@@ -55,5 +54,6 @@ def part2(nums, target):
                 seen.add(second)
 
 
-print(part1(nums, target))
-print(part2(nums, target))
+if __name__ == "__main__":
+    print(part1(nums, target))
+    print(part2(nums, target))
