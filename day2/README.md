@@ -1,4 +1,4 @@
-# Questions
+# Password Philosophy
 
 ## Part1
 
