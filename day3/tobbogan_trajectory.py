@@ -110,8 +110,7 @@ def part2(geomap):
     slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
     product = 1
     for right, down in slopes:
-        product *= (res:=part1(geomap, right, down))
-        print(res)
+        product *= part1(geomap, right, down)
     
     return product
 
