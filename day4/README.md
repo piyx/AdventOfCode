@@ -71,7 +71,6 @@ In your batch file, how many passports are valid?
 ## Part2
 
 ```
---- Part Two ---
 The line is moving more quickly now, but you overhear airport
 security talking about how passports with invalid data are getting
 through. Better add some data validation, quick!
