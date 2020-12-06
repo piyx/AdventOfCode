@@ -1,6 +1,6 @@
 # reading the input
 nums = []
-with open("input.txt", 'r') as f:
+with open("inputs/input1.txt", 'r') as f:
     for line in f:
         nums.append(int(line))
 
@@ -17,7 +17,7 @@ def part1(nums, target):
 
 
 def part2(nums, target):
-    for i, first in enumerate(nums, 1):
+    for i, first in enumerate(nums[:-2], 1):
         seen = set()
         remain = target - first
         for second in nums[i:]:
