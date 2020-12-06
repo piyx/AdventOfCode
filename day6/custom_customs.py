@@ -3,27 +3,11 @@ with open('input.txt') as f:
 
 
 def part1(data):
-    total = 0
-    for group in data:
-        answers = set()
-        for person in group:
-            answers |= (set(person))  # union
-
-        total += len(answers)
-
-    return total
+    return sum(len(set.union(*map(set, group))) for group in data)
 
 
 def part2(data):
-    total = 0
-    for group in data:
-        common_anwers = set(group[0])
-        for person in group:
-            common_anwers &= set(person)  # intersection
-
-        total += len(common_anwers)
-
-    return total
+    return sum(len(set.intersection(*map(set, group))) for group in data)
 
 
 if __name__ == "__main__":
