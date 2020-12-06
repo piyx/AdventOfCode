@@ -16,17 +16,6 @@ def isvalid(passport):
     return all(field in passport for field in required)
 
 
-REQUIRED = {
-    "byr": re.compile(r"^(19[2-9][0-9]|200[0-2])$"),
-    "iyr": re.compile(r"^20(1[0-9]|20)$"),
-    "eyr": re.compile(r"^20(2[0-9]|30)$"),
-    "hgt": re.compile(r"^(1[5-8][0-9]cm|19[0-3]cm|59in|6[0-9]in|7[0-6]in)$"),
-    "hcl": re.compile(r"^#[0-9a-f]{6}$"),
-    "ecl": re.compile(r"^(amb|blu|brn|gry|grn|hzl|oth)$"),
-    "pid": re.compile(r"^[0-9]{9}$")
-}
-
-
 def check(p):
     return isvalid(p) and all([
         re.match('^19[2-9][0-9]|200[0-2]$', p['byr']),
