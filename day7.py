@@ -14,16 +14,11 @@ def contains(child):
     parents = [parent for parent in bags if child in bags[parent]]
     return [child, *[grandparent for parent in parents for grandparent in contains(parent)]]
 
+
 def required(parent):
     return sum(bags[parent][child] * (1 + required(child)) for child in bags[parent])
 
-def part1(bags):
-    return len(set(contains('shiny gold'))) - 1
-
-def part2(bags):
-    return required('shiny gold')
 
 if __name__ == "__main__":
-    print(part1(bags))
-    print(part2(bags))
-
+    print(len(set(contains('shiny gold'))) - 1)  # part1
+    print(required('shiny gold'))                # part2
