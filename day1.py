@@ -1,10 +1,6 @@
 # reading the input
-nums = []
 with open("inputs/input1.txt", 'r') as f:
-    for line in f:
-        nums.append(int(line))
-
-target = 2020
+    nums = [int(line) for line in f]
 
 
 def part1(nums, target):
@@ -28,5 +24,5 @@ def part2(nums, target):
 
 
 if __name__ == "__main__":
-    print(part1(nums, target))
-    print(part2(nums, target))
+    print(part1(nums, 2020))
+    print(part2(nums, 2020))

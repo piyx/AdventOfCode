@@ -20,5 +20,5 @@ def required(parent):
 
 
 if __name__ == "__main__":
-    print(len(set(contains('shiny gold'))) - 1)  # part1
-    print(required('shiny gold'))                # part2
+    print(len(set(contains('shiny gold'))) - 1)
+    print(required('shiny gold'))
