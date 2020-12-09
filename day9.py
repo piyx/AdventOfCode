@@ -1,7 +1,5 @@
 from collections import deque
 
-
-# reading the input
 with open('inputs/input9.txt', 'r') as f:
     nums = [int(line.strip('\n')) for line in f]
 
@@ -26,16 +24,16 @@ def part1(nums):
 
 
 def part2(nums, invalid):
-    q, curr = deque([]), 0
+    q, s = deque([]), 0
     for num in nums:
-        if curr == invalid and len(q) > 1:
+        if s == invalid and len(q) > 1:
             return min(q) + max(q)
 
-        curr += num
+        s += num
         q.append(num)
 
-        while curr > invalid:
-            curr -= q.popleft()
+        while s > invalid:
+            s -= q.popleft()
 
 
 if __name__ == "__main__":

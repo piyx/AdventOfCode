@@ -4,7 +4,6 @@ def convert(seat):
     return row, col
 
 
-# reading the input
 with open('inputs/input5.txt', 'r') as f:
     data = [convert(line.strip('\n')) for line in f]
 

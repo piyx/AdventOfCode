@@ -2,11 +2,11 @@ import re
 
 bags = {}
 
-# reading the input
 with open('inputs/input7.txt', 'r') as f:
     for line in f:
         parent = re.match('\w+ \w+', line)[0]
-        children = {key: int(val) for val, key in re.findall('(\d+) (\w+ \w+)', line)}
+        children = {key: int(val)
+                    for val, key in re.findall('(\d+) (\w+ \w+)', line)}
         bags[parent] = children
 
 

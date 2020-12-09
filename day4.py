@@ -5,7 +5,6 @@ def passport(data):
     return {key: val for item in data.split() for key, val in [item.split(':')]}
 
 
-# reading the input
 with open('inputs/input4.txt', 'r') as f:
     lines = [' '.join(group.split('\n')) for group in f.read().split('\n\n')]
     passports = [passport(line) for line in lines]

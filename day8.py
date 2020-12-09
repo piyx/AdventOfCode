@@ -1,4 +1,3 @@
-# reading the input
 with open('inputs/input8.txt', 'r') as f:
     commands = [[cmd, int(num)] for line in f for cmd,
                 num in [line.strip('\n').split()]]

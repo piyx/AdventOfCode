@@ -1,4 +1,3 @@
-# reading the input
 with open("inputs/input1.txt", 'r') as f:
     nums = [int(line) for line in f]
 

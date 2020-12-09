@@ -1,9 +1,7 @@
 from math import prod
 
-geomap = []
 slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
-# reading the input
 with open('inputs/input3.txt', 'r') as f:
     geomap = [line.strip('\n') for line in f]
 

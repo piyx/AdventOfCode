@@ -1,6 +1,5 @@
 import re
 
-# reading the input
 with open("inputs/input2.txt", 'r') as f:
     data = [re.split('-| |: ', line.strip('\n')) for line in f]
 
