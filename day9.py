@@ -15,7 +15,7 @@ def search(nums, target, seen):
 
 def part1(nums):
     q = deque(nums[:25])
-    for num in nums[26:]:
+    for num in nums[25:]:
         if not search(q, num, set()):
             return num
 
