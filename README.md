@@ -12,8 +12,9 @@ All program solutions from advent of code December 2020
 | 6   | [Custom Customs](https://adventofcode.com/2020/day/6)      | [day6](day6.py) |
 | 7   | [Handy Haversacks](https://adventofcode.com/2020/day/7)    | [day7](day7.py) |
 | 8   | [Handheld Halting](https://adventofcode.com/2020/day/8)    | [day8](day8.py) |
+| 9   | [Encoding Error](https://adventofcode.com/2020/day/9)      | [day9](day9.py) |
 
-<!-- | 9   | [](https://adventofcode.com/2020/day/9)                    |   [day9](day9.py) |
+<!--
 | 10  | [](https://adventofcode.com/2020/day/10)                   | [day10](day10.py) |
 | 11  | [](https://adventofcode.com/2020/day/11)                   | [day11](day11.py) |
 | 12  | [](https://adventofcode.com/2020/day/12)                   | [day12](day12.py) |
