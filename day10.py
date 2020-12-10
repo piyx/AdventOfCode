@@ -1,4 +1,4 @@
-from collections import defaultdict, Counter
+from collections import Counter
 
 with open('inputs/input10.txt', 'r') as f:
     ratings = sorted([int(line.strip('\n')) for line in f])
