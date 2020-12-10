@@ -1,17 +1,12 @@
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 with open('inputs/input10.txt', 'r') as f:
     ratings = sorted([int(line.strip('\n')) for line in f])
 
 
 def part1(ratings):
-    diff, prev = defaultdict(int), 0
-
-    for rating in ratings:
-        diff[rating-prev] += 1
-        prev = rating
-
-    return diff[1] * (diff[3] + 1)
+    c = Counter(y-x for x, y in zip([0] + ratings, ratings))
+    return c[1] * (c[3] + 1)
 
 
 def part2(ratings):
