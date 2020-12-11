@@ -23,7 +23,7 @@ def empty_first(layout, row, col):
     empty = 0
     for y, x in ADJACENT:
         dy, dx = y, x
-        while (0 <= row+dy < N) and (0 <= col+dx < M) and layout[row+dy][col+dx] not in 'L#':
+        while inbound(row+dy, col+dx) and layout[row+dy][col+dx] not in 'L#':
             dy, dx = dy+y, dx+x
 
         if inbound(row+dy, col+dx) and layout[row+dy][col+dx] == '#':
