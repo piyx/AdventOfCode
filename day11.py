@@ -9,25 +9,25 @@ ADJACENT = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)
 N, M = len(layout), len(layout[0])
 
 
-def inbound(row, col):
-    '''Check if position is in bounds'''
-    return (0 <= row < N) and (0 <= col < M)
+inbound = lambda row, col: (0 <= row < N) and (0 <= col < M)
+
 
 def emptyadjacent(layout, row, col):
     '''Return number of empty adjacent seats'''
     return sum((not inbound(row+y, col+x) or layout[row+y][col+x] in 'L.' for y, x in ADJACENT))
 
-def isfirstempty(layout, row, col, dx, dy):
-    '''Check if the first visible seat from current row, col is empty in given direction'''
-    x, y = dx, dy
-    while inbound(row+y, col+x) and layout[row+y][col+x] not in 'L#':
-        x, y = x+dx, y+dy
-    
-    return not(inbound(row+y, col+x) and layout[row+y][col+x] == '#')
 
 def emptyfirst(layout, row, col):
     '''Return the number of empty visible seats'''
-    return sum(isfirstempty(layout, row, col, x, y) for y, x in ADJACENT)
+
+    def helper(layout, row, col, dx, dy):
+        x, y = dx, dy
+        while inbound(row+y, col+x) and layout[row+y][col+x] not in 'L#':
+            x, y = x+dx, y+dy
+    
+        return not(inbound(row+y, col+x) and layout[row+y][col+x] == '#')
+        
+    return sum(helper(layout, row, col, x, y) for y, x in ADJACENT)
 
 
 def num_occupied(layout, func, tolerance):
