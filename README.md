@@ -14,9 +14,9 @@ All program solutions from advent of code December 2020
 | 8   | [Handheld Halting](https://adventofcode.com/2020/day/8)    |   [day8](day8.py) |
 | 9   | [Encoding Error](https://adventofcode.com/2020/day/9)      |   [day9](day9.py) |
 | 10  | [Adapter Array](https://adventofcode.com/2020/day/10)      | [day10](day10.py) |
+| 11  | [Seating system](https://adventofcode.com/2020/day/11)     | [day11](day11.py) |
 
 <!--
-| 11  | [](https://adventofcode.com/2020/day/11)                   | [day11](day11.py) |
 | 12  | [](https://adventofcode.com/2020/day/12)                   | [day12](day12.py) |
 | 13  | [](https://adventofcode.com/2020/day/13)                   | [day13](day13.py) |
 | 14  | [](https://adventofcode.com/2020/day/14)                   | [day14](day14.py) |
