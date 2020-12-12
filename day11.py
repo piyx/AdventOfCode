@@ -5,11 +5,12 @@ with open('inputs/input11.txt', 'r') as f:
     layout = [[seat for seat in row.strip('\n')] for row in f]
 
 
-ADJACENT = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)]
+ADJACENT = [(0, 1), (0, -1), (1, 0), (-1, 0),
+            (1, 1), (-1, -1), (1, -1), (-1, 1)]
 N, M = len(layout), len(layout[0])
 
 
-inbound = lambda row, col: (0 <= row < N) and (0 <= col < M)
+def inbound(row, col): return (0 <= row < N) and (0 <= col < M)
 
 
 def emptyadjacent(layout, row, col):
@@ -24,9 +25,9 @@ def emptyfirst(layout, row, col):
         x, y = dx, dy
         while inbound(row+y, col+x) and layout[row+y][col+x] not in 'L#':
             x, y = x+dx, y+dy
-    
+
         return not(inbound(row+y, col+x) and layout[row+y][col+x] == '#')
-        
+
     return sum(helper(layout, row, col, x, y) for y, x in ADJACENT)
 
 
