@@ -1,26 +1,21 @@
-from math import prod, ceil, lcm
+from sympy.ntheory.modular import crt
+from math import prod, ceil
 
 
 with open('inputs/input13.txt', 'r') as f:
     target = int(next(f))
-    busses = [(int(bus), i) for i, bus in enumerate(
-        next(f).split(','), 0) if bus != 'x']
+    buses = {int(bus): -i for i,
+             bus in enumerate(next(f).split(',')) if bus != 'x'}
 
 
-def part1(busses):
-    return prod(min((ceil(target/bus) * bus - target, bus) for bus, i in busses))
+def part1(buses):
+    return prod(min((ceil(target/bus) * bus - target, bus) for bus in buses))
 
 
-def part2(busses):
-    num = 0
-    curr_lcm = 1
-    for x, y in busses:
-        while -num % x != y % x:
-            num += curr_lcm
-        curr_lcm = lcm(curr_lcm, x)
-    return num
+def part2(buses):
+    return crt(buses.keys(), buses.values())[0]
 
 
 if __name__ == "__main__":
-    print(part1(busses))
-    print(part2(busses))
+    print(part1(buses))
+    print(part2(buses))
