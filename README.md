@@ -17,9 +17,9 @@ All program solutions from advent of code December 2020
 | 11  | [Seating system](https://adventofcode.com/2020/day/11)     | [day11](day11.py) |
 | 12  | [Rain Risk](https://adventofcode.com/2020/day/12)          | [day12](day12.py) |
 | 13  | [Shuttle Search](https://adventofcode.com/2020/day/13)     | [day13](day13.py) |
+| 14  | [Docking Data](https://adventofcode.com/2020/day/14)       | [day14](day14.py) |
 
 <!--
-| 14  | [](https://adventofcode.com/2020/day/14)                   | [day14](day14.py) |
 | 15  | [](https://adventofcode.com/2020/day/15)                   | [day15](day15.py) |
 | 16  | [](https://adventofcode.com/2020/day/16)                   | [day16](day16.py) |
 | 17  | [](https://adventofcode.com/2020/day/17)                   | [day17](day17.py) |
