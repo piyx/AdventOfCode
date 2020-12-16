@@ -40,7 +40,7 @@ def part2(fields, nearby, myticket):
     while mapping:
         idx = next(idx for idx, s in mapping.items() if len(s) == 1)
         order[idx] = next(iter(mapping[idx]))
-        for _, s in mapping.items():
+        for s in mapping.values():
             s.discard(order[idx])
 
         del mapping[idx]
