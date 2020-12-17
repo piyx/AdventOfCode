@@ -20,9 +20,9 @@ All program solutions from advent of code December 2020
 | 14  | [Docking Data](https://adventofcode.com/2020/day/14)             | [day14](day14.py) |
 | 15  | [Rambunctious Recitations](https://adventofcode.com/2020/day/15) | [day15](day15.py) |
 | 16  | [Ticket Translation](https://adventofcode.com/2020/day/16)       | [day16](day16.py) |
+| 17  | [Conway Cubes](https://adventofcode.com/2020/day/17)             | [day17](day17.py) |
 
 <!--
-| 17  | [](https://adventofcode.com/2020/day/17)                   | [day17](day17.py) |
 | 18  | [](https://adventofcode.com/2020/day/18)                   | [day18](day18.py) |
 | 19  | [](https://adventofcode.com/2020/day/19)                   | [day19](day19.py) |
 | 20  | [](https://adventofcode.com/2020/day/20)                   | [day20](day20.py) |
