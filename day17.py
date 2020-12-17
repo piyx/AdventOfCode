@@ -7,10 +7,8 @@ with open("inputs/input17.txt", "r") as f:
     cubes2 = {(x, y, 0, 0) for x, r in enumerate(data) for y, c in enumerate(r) if c=='#'}
 
 
-NEIGHBOR = lambda cube, delta: tuple(x + dx for x, dx in zip(cube, delta))
-
-
 def cycle(cubes, dimension=3):
+    NEIGHBOR = lambda cube, delta: tuple(x + dx for x, dx in zip(cube, delta))
     ADJACENT = set(product([-1, 0, 1], repeat=dimension)) - {(0,) * dimension}
     
     for i in range(6):
