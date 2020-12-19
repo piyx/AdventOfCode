@@ -1,5 +1,4 @@
 import regex
-import re
 
 
 ISVALID = lambda pattern, message: bool(regex.fullmatch(pattern, message))
