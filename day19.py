@@ -3,6 +3,7 @@ import regex
 
 ISVALID = lambda pattern, message: bool(regex.fullmatch(pattern, message))
 
+
 with open("inputs/input19.txt", "r") as f:
     ruleset, messages = map(str.splitlines, f.read().split("\n\n"))
     rules = {l: r.strip('"').split() for line in ruleset for l, r in [line.split(": ")]}
