@@ -56,8 +56,8 @@ def part2(tiles):
         for tile_id, orientations in tiles.copy().items():
             del tiles[tile_id]
             for tile in orientations:
-                if row and not MATCH_BOTTOM(arranged[row-1][col][1], tile): continue
-                if col and not MATCH_RIGHT(arranged[row][col-1][1], tile): continue
+                if (row and not MATCH_BOTTOM(arranged[row-1][col][1], tile) or
+                    col and not MATCH_RIGHT(arranged[row][col-1][1], tile)): continue
                 
                 arranged[row][col] = (tile_id, tile)
                 if make_image(): return True
@@ -79,7 +79,7 @@ def part2(tiles):
             matches += all(pattern[r][c] == ' ' or stitched[r + dr][c + dc] == '#'
                             for r in range(m)
                             for c in range(p))
-        
+
         if matches:
             return (''.join(stitched).count('#') - ''.join(pattern).count('#') * matches)
 
