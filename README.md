@@ -23,10 +23,10 @@ All program solutions from advent of code December 2020
 | 17  | [Conway Cubes](https://adventofcode.com/2020/day/17)             | [day17](day17.py) |
 | 18  | [Operation Order](https://adventofcode.com/2020/day/18)          | [day18](day18.py) |
 | 19  | [Monster Messages](https://adventofcode.com/2020/day/19)         | [day19](day19.py) |
-| 20  | [Allergen Assessment](https://adventofcode.com/2020/day/20)      | [day20](day20.py) |
+| 20  | [Jurrasic Jigsaw](https://adventofcode.com/2020/day/20)          | [day20](day20.py) |
+| 21  | [Allergen Assessment](https://adventofcode.com/2020/day/21)      | [day21](day21.py) |
 
 <!--
-| 21  | [](https://adventofcode.com/2020/day/21)                   | [day21](day21.py) |
 | 22  | [](https://adventofcode.com/2020/day/22)                   | [day22](day22.py) |
 | 23  | [](https://adventofcode.com/2020/day/23)                   | [day23](day23.py) |
 | 24  | [](https://adventofcode.com/2020/day/24)                   | [day24](day24.py) |
