@@ -28,10 +28,10 @@ while FOOD:
         FOOD[k].discard(ingrd)
 
 
-SORTED_INGREDS = sorted(MAPPING.items(), key=lambda x: x[1])
+SORTED_INGREDS = sorted(MAPPING.keys(), key=lambda x: MAPPING[x])
 NO_ALRGNS = [ingrd for ingrd in ALL_INGREDS if ingrd not in MAPPING]
 
 
 if __name__ == "__main__":
     print(len(NO_ALRGNS))
-    print(','.join(item[0] for item in SORTED_INGREDS))
+    print(','.join(SORTED_INGREDS))
