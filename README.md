@@ -26,8 +26,8 @@ All program solutions from advent of code December 2020
 | 20  | [Jurrasic Jigsaw](https://adventofcode.com/2020/day/20)          | [day20](day20.py) |
 | 21  | [Allergen Assessment](https://adventofcode.com/2020/day/21)      | [day21](day21.py) |
 | 22  | [Crab Combat](https://adventofcode.com/2020/day/22)              | [day22](day22.py) |
+| 23  | [Crab Cups](https://adventofcode.com/2020/day/23)                | [day23](day23.py) |
 
 <!--
-| 23  | [](https://adventofcode.com/2020/day/23)                   | [day23](day23.py) |
 | 24  | [](https://adventofcode.com/2020/day/24)                   | [day24](day24.py) |
 | 25  | [](https://adventofcode.com/2020/day/25)                   | [day25](day25.py) | -->
