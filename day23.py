@@ -6,9 +6,6 @@ class Node:
         self.val = val
         self.next = next
 
-    def __str__(self):
-        return str(self.val)
-
 
 def game(data, moves=100, part1=True):
     cups = {}
@@ -38,11 +35,9 @@ def game(data, moves=100, part1=True):
     if not part1:
         return cups[1].next.val * cups[1].next.next.val
 
-    ans = ''
-    temp = cups[1].next
+    ans, temp = '', cups[1].next
     while temp != cups[1]:
-        ans += str(temp.val)
-        temp = temp.next
+        ans, temp = ans + str(temp.val), temp.next
     
     return ans
 
