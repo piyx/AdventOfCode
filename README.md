@@ -2,6 +2,11 @@
 
 All program solutions from advent of code December 2020
 
+# Images
+
+![](media/image.png)
+![](media/complete.png)
+
 | Day | Question                                                         |          Solution |
 | --- | :--------------------------------------------------------------- | ----------------: |
 | 1   | [Report repair](https://adventofcode.com/2020/day/1)             |  [day1](day01.py) |
@@ -28,6 +33,4 @@ All program solutions from advent of code December 2020
 | 22  | [Crab Combat](https://adventofcode.com/2020/day/22)              | [day22](day22.py) |
 | 23  | [Crab Cups](https://adventofcode.com/2020/day/23)                | [day23](day23.py) |
 | 24  | [Lobby Layout](https://adventofcode.com/2020/day/24)             | [day24](day24.py) |
-
-<!--
-| 25  | [](https://adventofcode.com/2020/day/25)                   | [day25](day25.py) | -->
+| 25  | [Combo Breaker](https://adventofcode.com/2020/day/25)            | [day25](day25.py) |
