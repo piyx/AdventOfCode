@@ -7,6 +7,8 @@ All program solutions from advent of code December 2020
 ![](media/image.png)
 ![](media/complete.png)
 
+# Table
+
 | Day | Question                                                         |          Solution |
 | --- | :--------------------------------------------------------------- | ----------------: |
 | 1   | [Report repair](https://adventofcode.com/2020/day/1)             |  [day1](day01.py) |
