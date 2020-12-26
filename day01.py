@@ -7,8 +7,7 @@ def part1(nums, target):
     for first in nums:
         if (second := target-first) in seen:
             return first*second
-        else:
-            seen.add(first)
+        seen.add(first)
 
 
 def part2(nums, target):
@@ -18,8 +17,7 @@ def part2(nums, target):
         for second in nums[i:]:
             if (third := remain-second) in seen:
                 return first*second*third
-            else:
-                seen.add(second)
+            seen.add(second)
 
 
 if __name__ == "__main__":
