@@ -1,3 +1,4 @@
+from collections.abc import Iterator
 import string
 import re
 
@@ -13,7 +14,7 @@ def valid(password: str) -> bool:
            )
 
 
-def generate(password: str) -> str:
+def generate(password: str) -> Iterator[str]:
     password = list(password[::-1])
     
     while True:
