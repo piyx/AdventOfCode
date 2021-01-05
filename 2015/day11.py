@@ -6,10 +6,10 @@ with open('inputs/11', 'r') as f:
     alphabets = string.ascii_lowercase
 
 
-def valid(s: str) -> bool:
-    return (all(c not in s for c in 'iol') and
-            re.search(r'([a-z])\1.*([a-z])\2', s) and
-            any(s[i:i+3] in alphabets for i in range(len(s) - 2))
+def valid(password: str) -> bool:
+    return (all(c not in password for c in 'iol') and
+            re.search(r'([a-z])\1.*([a-z])\2', password) and
+            any(password[i:i+3] in alphabets for i in range(len(password) - 2))
            )
 
 
@@ -28,7 +28,7 @@ def generate(password: str) -> str:
         yield ''.join(password[::-1])
 
 
-def renew(password):
+def renew(password: str) -> str:
     g = generate(password)
     password = next(g)
 
