@@ -16,4 +16,3 @@ def solve(data):
 if __name__ == "__main__":
     print(sum(map(int, re.findall(r'\d+|-\d+', str(data)))))
     print(solve(data))
-    
