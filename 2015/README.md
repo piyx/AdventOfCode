@@ -18,9 +18,9 @@
 | 12  | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12)                   | [day12](day12.py) |
 | 13  | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13)            | [day13](day13.py) |
 | 14  | [Reindeer Olympics](https://adventofcode.com/2015/day/14)                      | [day14](day14.py) |
+| 15  | [Rambunctious Recitations](https://adventofcode.com/2015/day/15)               | [day15](day15.py) |
 
 <!--
-| 15  | [Rambunctious Recitations](https://adventofcode.com/2015/day/15)               | [day15](day15.py) |
 | 16  | [Ticket Translation](https://adventofcode.com/2015/day/16)                     | [day16](day16.py) |
 | 17  | [Conway Cubes](https://adventofcode.com/2015/day/17)                           | [day17](day17.py) |
 | 18  | [Operation Order](https://adventofcode.com/2015/day/18)                        | [day18](day18.py) |
