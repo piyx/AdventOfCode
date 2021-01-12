@@ -21,9 +21,9 @@
 | 15  | [Science for Hungry People](https://adventofcode.com/2015/day/15)              | [day15](day15.py) |
 | 16  | [Aunt Sue](https://adventofcode.com/2015/day/16)                               | [day16](day16.py) |
 | 17  | [No Such Thing as Too Much](https://adventofcode.com/2015/day/17)              | [day17](day17.py) |
+| 18  | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)               | [day18](day18.py) |
 
 <!--
-| 18  | [Operation Order](https://adventofcode.com/2015/day/18)                        | [day18](day18.py) |
 | 19  | [Monster Messages](https://adventofcode.com/2015/day/19)                       | [day19](day19.py) |
 | 20  | [Jurrasic Jigsaw](https://adventofcode.com/2015/day/20)                        | [day20](day20.py) |
 | 21  | [Allergen Assessment](https://adventofcode.com/2015/day/21)                    | [day21](day21.py) |

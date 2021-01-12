@@ -7,7 +7,7 @@ with open('inputs/17', 'r') as f:
     counts = defaultdict(int)
 
 
-def dfs(idx, target, used):
+def dfs(idx: int, target: int, used: int) -> int:
     if target == 0:
         counts[used] += 1
         return 1
