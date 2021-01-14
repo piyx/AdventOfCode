@@ -22,10 +22,10 @@
 | 16  | [Aunt Sue](https://adventofcode.com/2015/day/16)                               | [day16](day16.py) |
 | 17  | [No Such Thing as Too Much](https://adventofcode.com/2015/day/17)              | [day17](day17.py) |
 | 18  | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)               | [day18](day18.py) |
+| 19  | [Medicine for Rudolph](https://adventofcode.com/2015/day/19)                   | [day19](day19.py) |
+| 20  | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)     | [day20](day20.py) |
 
 <!--
-| 19  | [Monster Messages](https://adventofcode.com/2015/day/19)                       | [day19](day19.py) |
-| 20  | [Jurrasic Jigsaw](https://adventofcode.com/2015/day/20)                        | [day20](day20.py) |
 | 21  | [Allergen Assessment](https://adventofcode.com/2015/day/21)                    | [day21](day21.py) |
 | 22  | [Crab Combat](https://adventofcode.com/2015/day/22)                            | [day22](day22.py) |
 | 23  | [Crab Cups](https://adventofcode.com/2015/day/23)                              | [day23](day23.py) |
