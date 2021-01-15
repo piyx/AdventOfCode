@@ -24,9 +24,9 @@
 | 18  | [Like a GIF For Your Yard](https://adventofcode.com/2015/day/18)               | [day18](day18.py) |
 | 19  | [Medicine for Rudolph](https://adventofcode.com/2015/day/19)                   | [day19](day19.py) |
 | 20  | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20)     | [day20](day20.py) |
+| 21  | [RPG Simulator 20XX](https://adventofcode.com/2015/day/21)                     | [day21](day21.py) |
 
 <!--
-| 21  | [Allergen Assessment](https://adventofcode.com/2015/day/21)                    | [day21](day21.py) |
 | 22  | [Crab Combat](https://adventofcode.com/2015/day/22)                            | [day22](day22.py) |
 | 23  | [Crab Cups](https://adventofcode.com/2015/day/23)                              | [day23](day23.py) |
 | 24  | [Lobby Layout](https://adventofcode.com/2015/day/24)                           | [day24](day24.py) |
