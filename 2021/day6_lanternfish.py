@@ -1,20 +1,13 @@
+from collections import Counter
 with open("inputs/day6.txt") as f:
-    cnts = [0]*10
-    for num in map(int, f.read().split(',')):
-        cnts[num] += 1 
+    fish = Counter(map(int, f.read().split(',')))
 
 
-def simulate(cnts, iterations=256):
+def simulate(fish, iterations=256):
     for _ in range(iterations):
-        copy = [0]*10
-        for i in range(1, 10):
-            copy[i-1] += cnts[i]
-        copy[6] += cnts[0]
-        copy[8] += cnts[0]
-        cnts = copy
-    return sum(cnts)
+        fish = Counter({k-1: v for k, v in fish.items() if k > 0}) + Counter({6: fish[0], 8: fish[0]})
+    return sum(fish.values())
 
 
-if __name__=="__main__":
-    print(simulate(cnts, iterations=80))
-    print(simulate(cnts, iterations=256))
+print(simulate(fish, iterations=80))
+print(simulate(fish, iterations=256))
