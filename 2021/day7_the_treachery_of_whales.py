@@ -1,13 +1,10 @@
-from collections import Counter
+import numpy as np
 
 with open("inputs/day7.txt") as f:
-    pos = Counter(map(int, f.read().split(',')))
-    beg, end = min(pos), max(pos)
+    positions = list(map(int, f.read().split(',')))
 
-def solve(pos, func=None):
-    return min(sum(func(abs(p-dest))*cnts 
-               for p, cnts in pos.items())
-               for dest in range(beg, end))
-
-print(solve(pos, lambda x: x))
-print(solve(pos, lambda x: x*(x+1)//2))
+median = np.median(positions)
+mean = int(np.mean(positions))
+triangle = lambda x: x*(x+1)//2
+print(sum(abs(median-p) for p in positions))
+print(sum(triangle(abs(mean-p)) for p in positions))
