@@ -19,8 +19,8 @@ def perform_fold(points, axis, fold_point):
 
 def display_paper(points):
     height = max(y for _, y in points) + 1
-    widht  = max(x for x, _ in points) + 1
-    paper = [[' ']*widht for _ in range(height)]
+    width  = max(x for x, _ in points) + 1
+    paper = [[' ']*width for _ in range(height)]
     for x, y in points:
         paper[y][x] = '#'
     pprint([''.join(row) for row in paper])
