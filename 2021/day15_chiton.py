@@ -8,12 +8,9 @@ with open("inputs/day15.txt") as f:
 def in_cave(y, x, cave_size):
     return 0 <= y < height*cave_size and 0 <= x < width*cave_size
 
-def risk_level(cave, y, x, size=1):
+def risk_level(cave, y, x):
     risk_level = cave[y%height][x%width] + x//height + y//width
-    if risk_level >= 10:
-        risk_level = risk_level%10 + 1
-    
-    return risk_level
+    return risk_level % 9 or risk_level
 
 def dijkstras(cave, cave_size=1):
     src, dest = (0, 0), (height*cave_size-1, width*cave_size-1)
@@ -26,8 +23,7 @@ def dijkstras(cave, cave_size=1):
             if (dy, dx) in visited or not in_cave(dy, dx, cave_size):
                 continue            
                 
-            r = risk_level(cave, dy, dx, size=1)
-            if r == float('inf'): continue
+            r = risk_level(cave, dy, dx)
             heapq.heappush(heap, (risk+r, dy, dx))
             visited.add((dy, dx))
 
