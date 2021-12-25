@@ -5,7 +5,6 @@ with open("inputs/day25.txt") as f:
     grid = [list(line.strip()) for line in f.readlines()]
     H, W = len(grid), len(grid[0])
     east_moving, south_moving, empty = '>', 'v', '.'
-    empty = '.'
 
 
 def move(grid, sea_cucumber):
@@ -19,6 +18,7 @@ def move(grid, sea_cucumber):
             new[i][j] = empty
     
     return new   
+
 
 prev = grid
 for i in count(1):
