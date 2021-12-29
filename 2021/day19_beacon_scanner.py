@@ -33,14 +33,14 @@ def locate_scanner(i, j):
                 overlaps[beacon1 - beacon2] += 1
 
         for scanner_position, overlap in overlaps.items():
-            if overlap >= 12:
-                scanners[j] = [
-                    beacon + scanner_position for beacon in scanner_orientaion
-                ]
-                located_scanners.append(j)
-                unlocated_scanners.remove(j)
-                scanner_positions[j] = scanner_position
-                return
+            if overlap < 12:
+                continue
+
+            scanners[j] = [beacon + scanner_position for beacon in scanner_orientaion]
+            located_scanners.append(j)
+            unlocated_scanners.remove(j)
+            scanner_positions[j] = scanner_position
+            return
 
 
 with open("inputs/day19.txt") as f:
