@@ -22,7 +22,7 @@ class Point(NamedTuple):
 def generate_orientations(scanner):
     for p in permutations([0, 1, 2]):
         for r in product([-1, 1], repeat=3):
-            yield set(Point(*[beacon[i] * r[i] for i in p]) for beacon in scanner)
+            yield [Point(*[beacon[i] * r[i] for i in p]) for beacon in scanner]
 
 
 def locate_scanner(i, j):
@@ -34,9 +34,9 @@ def locate_scanner(i, j):
 
         for scanner_position, overlap in overlaps.items():
             if overlap >= 12:
-                scanners[j] = set(
+                scanners[j] = [
                     beacon + scanner_position for beacon in scanner_orientaion
-                )
+                ]
                 located_scanners.append(j)
                 unlocated_scanners.remove(j)
                 scanner_positions[j] = scanner_position
@@ -45,7 +45,7 @@ def locate_scanner(i, j):
 
 with open("inputs/day19.txt") as f:
     scanners = [
-        {Point(*map(int, line.split(","))) for line in chunk.split("\n")[1:]}
+        [Point(*map(int, line.split(","))) for line in chunk.split("\n")[1:]]
         for chunk in f.read().split("\n\n")
     ]
 
@@ -60,7 +60,7 @@ def part1():
         for j in unlocated_scanners.copy():
             locate_scanner(i, j)
 
-    return len(set.union(*scanners))
+    return len(set.union(*map(set, scanners)))
 
 
 def part2():
