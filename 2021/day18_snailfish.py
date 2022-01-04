@@ -54,8 +54,7 @@ class Snailfish:
     
     def explode(self):
         def helper(node, depth=0):
-            if not node.left and not node.right:
-                return
+            if not node.left and not node.right: return
 
             if depth == 4:
                 self.add_regular_left_and_right(node.left, node.right)
@@ -69,8 +68,7 @@ class Snailfish:
         helper(self)
     
     def split(self):
-        if not self:
-            return
+        if not self: return
 
         if self.val >= 10:
             half = self.val/2
@@ -79,17 +77,14 @@ class Snailfish:
             self.val = -1
             return True
 
-        if self.left and self.left.split():
-            return True
-
-        if self.right and self.right.split():
-            return True
+        if self.left and self.left.split(): return True
+        if self.right and self.right.split(): return True
 
     def magnitude(self):
         def helper(node):
             if not node: return 0
             if node.val != -1: return node.val
-            return 3 * helper(node.left) + 2 * helper(node.right)
+            return 3*helper(node.left) + 2*helper(node.right)
         return helper(self)
 
 
