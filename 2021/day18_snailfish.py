@@ -93,14 +93,15 @@ with open("inputs/day18.txt") as f:
     homework = [ast.literal_eval(line.strip()) for line in f.readlines()]
 
 def part1():
-    return reduce(add, map(Snailfish.generate_tree, homework)).magnitude()
+    homework_sum = reduce(add, map(Snailfish.generate_tree, homework))
+    return homework_sum.magnitude()
 
 def part2():
-    tree = Snailfish.generate_tree
+    Tree = Snailfish.generate_tree
     max_magnitude = 0
     for h1, h2 in combinations(homework, 2):
-        max_magnitude = max(max_magnitude, (tree(h1)+tree(h2)).magnitude())
-        max_magnitude = max(max_magnitude, (tree(h2)+tree(h1)).magnitude())
+        max_magnitude = max(max_magnitude, (Tree(h1)+Tree(h2)).magnitude())
+        max_magnitude = max(max_magnitude, (Tree(h2)+Tree(h1)).magnitude())
     return max_magnitude
 
 print(part1())
