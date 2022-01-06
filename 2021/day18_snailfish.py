@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from functools import reduce
 from operator import add
 import math
+import ast
 
 
 @dataclass
@@ -89,7 +90,7 @@ class Snailfish:
 
 
 with open("inputs/day18.txt") as f:
-    homework = [eval(line.strip()) for line in f.readlines()]
+    homework = [ast.literal_eval(line.strip()) for line in f.readlines()]
 
 def part1():
     return reduce(add, map(Snailfish.generate_tree, homework)).magnitude()
