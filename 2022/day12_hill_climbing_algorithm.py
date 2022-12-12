@@ -1,21 +1,20 @@
 import collections
 import math
 
+
 with open("inputs/day12.txt") as f:
     heightmap = collections.defaultdict(lambda: math.inf)
     
     for row, line in enumerate(f.read().splitlines()):
         for col, height in enumerate(line):
-            heightmap[(row, col)] = ord(height)
-
-    start = next(position for position, height in heightmap.items() if height == ord('S'))
-    end = next(position for position, height in heightmap.items() if height == ord('E'))
-    starts = [position for position, height in heightmap.items() if height == ord('a')]
-    heightmap[start], heightmap[end] = ord('a'), ord('z')
-    starts.append(start)
+            heightmap[(row, col)] = ord(height)    
 
 
-def shortest_distance(heightmap: list[list[str]], start: tuple[int, int], end: tuple[int, int]) -> int:
+def get_position(heightmap: dict[tuple[int, int], int], height: int) -> list[tuple[int, int]]:
+    return [position for position, h in heightmap.items() if h == height]
+
+
+def shortest_distance(heightmap: dict[tuple[int, int], int], start: tuple[int, int], end: tuple[int, int]) -> int:
     visited = {start}
     queue = collections.deque([(*start, 0)])
 
@@ -33,14 +32,12 @@ def shortest_distance(heightmap: list[list[str]], start: tuple[int, int], end: t
     return math.inf
 
 
-def part1(heightmap: dict[tuple[int, int], int], start: tuple[int, int], end: tuple[int, int]) -> int:
-    return shortest_distance(heightmap, start, end)
-
-
-def part2(heightmap: dict[tuple[int, int], int], starts: list[tuple[int, int]], end: tuple[int, int]) -> int:
-    return min(shortest_distance(heightmap, start, end) for start in starts)
-
-
 if __name__=="__main__":
-    print(part1(heightmap, start, end))
-    print(part2(heightmap, starts, end))
+    start = get_position(heightmap, height=ord('S'))[0]
+    end = get_position(heightmap, height=ord('E'))[0]
+    
+    heightmap[start], heightmap[end] = ord('a'), ord('z')
+    starting_points = get_position(heightmap, height=ord('a'))
+
+    print(shortest_distance(heightmap, start, end))
+    print(min(shortest_distance(heightmap, start, end) for start in starting_points))
