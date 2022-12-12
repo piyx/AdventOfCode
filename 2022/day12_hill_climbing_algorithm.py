@@ -10,7 +10,7 @@ with open("inputs/day12.txt") as f:
             heightmap[(row, col)] = ord(height)    
 
 
-def get_position(heightmap: dict[tuple[int, int], int], height: int) -> list[tuple[int, int]]:
+def get_positions(heightmap: dict[tuple[int, int], int], height: int) -> list[tuple[int, int]]:
     return [position for position, h in heightmap.items() if h == height]
 
 
@@ -33,11 +33,11 @@ def shortest_distance(heightmap: dict[tuple[int, int], int], start: tuple[int, i
 
 
 if __name__=="__main__":
-    start = get_position(heightmap, height=ord('S'))[0]
-    end = get_position(heightmap, height=ord('E'))[0]
+    start = get_positions(heightmap, height=ord('S'))[0]
+    end = get_positions(heightmap, height=ord('E'))[0]
     
     heightmap[start], heightmap[end] = ord('a'), ord('z')
-    starting_points = get_position(heightmap, height=ord('a'))
+    starting_points = get_positions(heightmap, height=ord('a'))
 
     print(shortest_distance(heightmap, start, end))
     print(min(shortest_distance(heightmap, start, end) for start in starting_points))
