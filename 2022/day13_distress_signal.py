@@ -11,8 +11,7 @@ def compare(left: list, right: list) -> int:
     for l, r in zip(left, right):
         match l, r:
             case int(), int():
-                if l < r: return -1
-                if l > r: return 1
+                if l < r or l > r: return -1 if l < r else 1
             case list(), list():
                 if (cmp := compare(left=l, right=r)) != 0: return cmp
             case list(), int():
@@ -28,11 +27,9 @@ def part1(pairs: list[tuple]) -> int:
  
 
 def part2(pairs: list[tuple]) -> int:
-    packets = list(itertools.chain(*pairs))
-    packets.append([[2]])
-    packets.append([[6]])
-    packets.sort(key=functools.cmp_to_key(compare))
-    return (packets.index([[2]]) + 1) * (packets.index([[6]]) + 1)
+    divideridx1 = 1 + sum(1 for packet in itertools.chain(*pairs) if compare([[2]], packet) == 1)
+    divideridx2 = 2 + sum(1 for packet in itertools.chain(*pairs) if compare([[6]], packet) == 1)
+    return divideridx1 * divideridx2
 
 
 if __name__=="__main__":
