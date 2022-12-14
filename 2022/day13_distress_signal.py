@@ -17,7 +17,6 @@ def compare(left: list, right: list) -> int:
 
         if (cmp := compare(l, r)) != 0: return cmp
 
-
     if len(left) < len(right): return -1
     if len(left) > len(right): return 1
     return 0
