@@ -1,5 +1,4 @@
 import ast
-import functools
 import itertools
 
 
@@ -10,17 +9,19 @@ with open("inputs/day13.txt") as f:
 def compare(left: list, right: list) -> int:
     for l, r in zip(left, right):
         match l, r:
-            case int(), int():
-                if l < r or l > r: return -1 if l < r else 1
-            case list(), list():
-                if (cmp := compare(left=l, right=r)) != 0: return cmp
-            case list(), int():
-                if (cmp := compare(left=l, right=[r])) != 0: return cmp
-            case int(), list():
-                if (cmp := compare(left=[l], right=r)) != 0: return cmp
+            case list(), int(): r = [r]
+            case int(), list(): l = [l]
+            case int(), int() if l < r: return -1
+            case int(), int() if l > r: return 1
+            case int(), int() if l == r: continue
 
-    return -1 if len(left) < len(right) else 1 if len(left) > len(right) else 0
+        if (cmp := compare(l, r)) != 0: return cmp
 
+
+    if len(left) < len(right): return -1
+    if len(left) > len(right): return 1
+    return 0
+    
 
 def part1(pairs: list[tuple]) -> int:
     return sum(idx for idx, (l, r) in enumerate(pairs, start=1) if compare(left=l, right=r) == -1)
