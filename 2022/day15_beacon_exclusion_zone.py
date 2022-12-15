@@ -18,7 +18,7 @@ def get_intervals_covered_by_sensor(positions: list[tuple[int, int, int, int]], 
     return intervals_covered  
 
 
-def merge_overlapping_intervals(intervals: list[tuple[int, int]]) -> int:
+def merge_overlapping_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:
     without_overlaps = [[float("-inf"), float("-inf")]]
 
     for left, right in sorted(intervals):
@@ -38,12 +38,12 @@ def get_gap_in_interval(intervals: list[tuple[int, int]]) -> int | None:
     return without_overlaps.pop()[0] - 1
 
 
-def part1(positions: list[tuple], y_coord: int) -> int:
+def part1(positions: list[tuple[int, int, int, int]], y_coord: int) -> int:
     intervals = get_intervals_covered_by_sensor(positions=positions, y_coord=y_coord, x_bound=float("inf"))
     return get_num_points_covered(intervals=intervals)
 
 
-def part2(positions: list[tuple], x_bound: int, y_bound: int) -> int:
+def part2(positions: list[tuple[int, int, int, int]], x_bound: int, y_bound: int) -> int:
     for y in range(y_bound):
         intervals = get_intervals_covered_by_sensor(positions=positions, y_coord=y, x_bound=x_bound)
         x = get_gap_in_interval(intervals=intervals)
