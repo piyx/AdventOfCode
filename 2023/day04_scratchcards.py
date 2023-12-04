@@ -6,21 +6,20 @@ import re
 
 @dataclass
 class Scratchcard:
-    winning_numbers: set[int]
-    my_numbers: set[int]
+    winning: set[int]
+    numbers: set[int]
 
     def _parse_card(line: str) -> Self:
-        _, numbers = line.split(":")
-        list1, list2 = numbers.strip().split("|")
+        list1, list2 = line.split(":")[-1].strip().split("|")
         
         return Scratchcard(
-            winning_numbers=set(re.findall(r"\d+", list1)), 
-            my_numbers=set(re.findall(r"\d+", list2))
+            winning=set(re.findall(r"\d+", list1)), 
+            numbers=set(re.findall(r"\d+", list2))
         )
 
 
     def wins(self) -> int:
-        return len(self.winning_numbers & self.my_numbers)
+        return len(self.winning & self.my_numbers)
 
 
 
@@ -31,12 +30,12 @@ def part1(scratchcards: list[Scratchcard]) -> int:
 
 def part2(scratchcards: list[Scratchcard]) -> int:
     @cache
-    def dp(card_num: int) -> list[int]:
-        wins = scratchcards[card_num-1].wins()
-        cards_won = range(card_num+1, card_num+1+wins)
-        return 1 + sum(dp(i) for i in cards_won)
+    def dp(card: int) -> list[int]:
+        wins = scratchcards[card-1].wins()
+        cardswon = range(card+1, card+1+wins)
+        return 1 + sum(dp(i) for i in cardswon)
     
-    return sum(dp(card_num) for card_num in range(1, len(scratchcards)+1)) 
+    return sum(dp(card) for card in range(1, len(scratchcards)+1)) 
         
 
 
