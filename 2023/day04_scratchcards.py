@@ -31,12 +31,12 @@ def part1(scratchcards: list[Scratchcard]) -> int:
 
 def part2(scratchcards: list[Scratchcard]) -> int:
     @cache
-    def dp(card: int) -> list[int]:
-        wins = scratchcards[card-1].wins()
-        cards_won = range(card+1, card+1+wins)
+    def dp(card_num: int) -> list[int]:
+        wins = scratchcards[card_num-1].wins()
+        cards_won = range(card_num+1, card_num+1+wins)
         return 1 + sum(dp(i) for i in cards_won)
     
-    return sum(dp(i) for i in range(len(scratchcards))) 
+    return sum(dp(card_num) for card_num in range(1, len(scratchcards)+1)) 
         
 
 
