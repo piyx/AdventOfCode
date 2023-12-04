@@ -13,7 +13,6 @@ def part2(document: list[str], words: list[str]) -> int:
     return part1(updated_document)
 
 
-
 def replace_word_with_digit(line: str, words: str) -> str:
     for digit, word in enumerate(words):
         line = line.replace(word, f"{word}{digit}{word}")
