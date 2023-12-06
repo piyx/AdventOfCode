@@ -5,8 +5,7 @@ import math
 with open("inputs/day06.txt") as f:
     lines = f.read().strip().split('\n')
     times = [int(time) for time in re.findall(r"\d+", lines[0])] 
-    distances = [int(dist) for dist in re.findall(r"\d+", lines[1])]    
-
+    distances = [int(dist) for dist in re.findall(r"\d+", lines[1])]
 
 
 def num_ways_to_win(time: int, distance: int) -> int:
@@ -24,10 +23,9 @@ def num_ways_to_win(time: int, distance: int) -> int:
 def part1(times: list[int], distances: list[int]) -> int:
     return math.prod(map(num_ways_to_win, times, distances))
 
+
 def part2(time: int, distance: int) -> int:
     return num_ways_to_win(time, distance)
-
-
 
 
 time = int(''.join(map(str, times)))
