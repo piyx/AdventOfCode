@@ -29,7 +29,7 @@ def weight(hand: str, allowjoker: bool) -> list[int]:
     return [p] + [-1 if allowjoker and card == 'J' else strengths[card] for card in hand]
 
 
-def winnings(hands: list[tuple[int, int]], allowjoker) -> int:
+def winnings(hands: list[tuple[int, int]], allowjoker: bool) -> int:
     order = sorted(hands, key=lambda x: weight(hand=x[0], allowjoker=allowjoker))
     return sum(bid * rank for rank, (_, bid) in enumerate(order, start=1))
 
