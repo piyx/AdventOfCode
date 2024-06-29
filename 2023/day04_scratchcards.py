@@ -19,7 +19,7 @@ class Scratchcard:
 
 
     def wins(self) -> int:
-        return len(self.winning & self.my_numbers)
+        return len(self.winning & self.numbers)
 
 
 
