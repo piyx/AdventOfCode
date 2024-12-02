@@ -1,3 +1,6 @@
+import itertools
+
+
 with open("inputs/day02.txt") as f:
     reports = [list(map(int, line.split())) for line in f.readlines()]
 
@@ -5,7 +8,7 @@ LIMIT = 3
 
 
 def is_strictly_increasing(report: list[int]) -> bool:
-    return all(b > a and (b-a) <= LIMIT for a, b in zip(report, report[1:]))
+    return all(b > a and (b-a) <= LIMIT for a, b in itertools.pairwise(report))
 
 
 def is_safe(report: list[int]) -> bool:
