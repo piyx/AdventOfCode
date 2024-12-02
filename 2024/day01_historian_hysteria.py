@@ -16,9 +16,8 @@ def part1(leftlist: list[int], rightlist: list[int]) -> int:
 
 
 def part2(leftlist: list[int], rightlist: list[int]) -> int:
-    leftcounts = Counter(leftlist)
-    rightcounts = Counter(rightlist)
-    return sum(num * leftcounts[num] * rightcounts[num] for num in leftcounts)
+    counts = Counter(rightlist)
+    return sum(num * counts[num] for num in leftlist)
 
 
 if __name__=="__main__":
