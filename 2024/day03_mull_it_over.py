@@ -3,7 +3,6 @@ import re
 
 with open("inputs/day03.txt") as f:
     memory = f.read().strip()
-    
 
 
 def part1(memory: str) -> int:
