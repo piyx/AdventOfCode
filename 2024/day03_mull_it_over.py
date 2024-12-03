@@ -15,12 +15,12 @@ def part2(memory: str) -> int:
     commands = re.findall(pattern, memory) 
 
     result = 0
-    dontmul = False
+    multiply = True
 
     for command in commands:
-        if command.startswith("don't"): dontmul = True
-        elif command.startswith("do"): dontmul = False
-        elif command.startswith("mul") and not dontmul:
+        if command.startswith("don't"): multiply = False
+        elif command.startswith("do"): multiply = True
+        elif command.startswith("mul") and multiply:
             x, y = re.findall('\d+', command)
             result += int(x) * int(y)
         
