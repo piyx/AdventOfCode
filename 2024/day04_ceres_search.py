@@ -4,9 +4,9 @@ import collections
 
 with open("inputs/day04.txt") as f:
     grid = collections.defaultdict(str) | {
-        (row, col): char 
-        for row, line in enumerate(f.readlines())
-        for col, char in enumerate(line)
+        (r, c): char 
+        for r, line in enumerate(f.readlines())
+        for c, char in enumerate(line)
     }
 
     coords = list(grid.keys())
