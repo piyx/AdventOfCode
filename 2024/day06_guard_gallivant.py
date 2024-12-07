@@ -19,7 +19,6 @@ def move(grid: dict[complex: str], start: complex) -> tuple[bool, set]:
             visited.add(nextpos)
             position = nextpos
 
-
     return False, visited
     
 
