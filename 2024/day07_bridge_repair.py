@@ -9,7 +9,7 @@ class Equation:
     operands: list[int]
 
     def _parse(equation: str) -> Equation:
-        result, *operands = map(int, re.findall('\d+', equation)) 
+        result, *operands = map(int, re.findall(r'\d+', equation)) 
         return Equation(result=result, operands=operands)
 
     def cansolve(self, operations: list[callable]) -> bool:
