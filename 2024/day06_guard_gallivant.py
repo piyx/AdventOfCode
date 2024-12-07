@@ -1,48 +1,39 @@
 with open("inputs/day06.txt") as f:
-    GRID = [list(line.strip()) for line in f.readlines()]
-    START = next((r, c) for r, row in enumerate(GRID) for c, char in enumerate(row) if char == '^')
+    GRID = {r+c*1j: char for r, line in enumerate(f.readlines()) for c, char in enumerate(line.strip())}
+    START = next(position for position, char in GRID.items() if char == '^')
 
 
-def move(grid: list[list[str]], start: tuple[int, int]) -> tuple[bool, set]:
-    r, c = start
-    dr, dc = -1, 0
-    visited = {(r, c)}
-    seen = {(r, c, dr, dc)}
+def move(grid: dict[complex: str], start: complex) -> tuple[bool, set]:
+    position = start
+    direction = -1
+    visited = {position}
+    seen = {(position, direction)}
 
-    while 0 <= (nextr:= r+dr) < len(grid) and 0 <= (nextc:= c+dc) < len(grid[0]):
-        if (nextr, nextc, dr, dc) in seen: return True, visited        
-        seen.add((nextr, nextc, dr, dc))
+    while (nextpos := position+direction) in grid:
+        if (nextpos, direction) in seen: return True, visited        
+        seen.add((nextpos, direction))
 
-        if GRID[nextr][nextc] == '#': 
-            dr, dc = dc, -dr
+        if grid[nextpos] == '#': 
+            direction *= -1j
         else: 
-            visited.add((nextr, nextc))
-            r, c = nextr, nextc
+            visited.add(nextpos)
+            position = nextpos
 
-    
+
     return False, visited
     
 
-def part1() -> int:
-    _, visited = move(GRID, START)
+def part1(grid: dict[complex, str], start: complex) -> int:
+    visited = move(grid, start)[1]
     return len(visited)
 
 
-def part2() -> int:
-    _, visited = move(GRID, START)
-    visited.remove(START)
-
-    loops = 0
-
-    for r, c in visited:
-        GRID[r][c] = '#'
-        isloop, _ = move(GRID, START)
-        if isloop: loops += 1
-        GRID[r][c] = '.'
-
-    return loops
+def part2(grid: dict[complex, str], start: complex) -> int:
+    visited = move(grid, start)[1]
+    visited.remove(start)
+    return sum(move(grid | {position: '#'}, start)[0] for position in visited)
 
 
 if __name__=="__main__":
-    print(part1())
-    print(part2())
+    print(part1(GRID, START))
+    print(part2(GRID, START))
