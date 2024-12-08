@@ -30,7 +30,7 @@ def part1():
 
 
 def part2():
-    totalrows = max(grid, key=lambda x: x.real)
+    totalrows = max(grid, key=lambda x: x.real) + 1
     return signal_impact(signal_range=range(0, totalrows))
 
 
