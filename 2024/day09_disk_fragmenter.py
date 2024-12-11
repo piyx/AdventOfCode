@@ -34,11 +34,7 @@ def part2(diskmap: str) -> int:
             files[i], spaces[j] = (spacepos, filelen), (spacepos+filelen, spacelen-filelen)
             break
 
-    return sum(
-        fileid*p 
-        for fileid, (filepos, length) in enumerate(files)
-        for p in range(filepos, filepos+length)
-    )
+    return sum(fileid*p for fileid, (filepos, length) in enumerate(files) for p in range(filepos, filepos+length))
 
 
 if __name__=="__main__":
