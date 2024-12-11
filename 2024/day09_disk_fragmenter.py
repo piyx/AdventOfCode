@@ -30,7 +30,6 @@ def part2(diskmap: str) -> int:
         for j, (spacepos, spacelen) in enumerate(spaces):
             if i <= j: break
             if spacelen < filelen: continue
-
             files[i], spaces[j] = (spacepos, filelen), (spacepos+filelen, spacelen-filelen)
             break
 
