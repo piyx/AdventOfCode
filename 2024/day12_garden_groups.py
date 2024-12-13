@@ -1,7 +1,6 @@
 with open("inputs/day12.txt") as f:
     GARDEN = {x+y*1j: plant for x, line in enumerate(f.readlines()) for y, plant in enumerate(line.strip())}
-    GROUPS = []
-    
+    GROUPS = []    
     seen = set()
 
     for position, plant in GARDEN.items():
