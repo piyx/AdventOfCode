@@ -24,12 +24,10 @@ def part1():
     ordering = sorted(itertools.combinations(points, r=2), key=lambda p: dist(*p))
     circuits = [{point} for point in points]
 
-    for i, (p1, p2) in enumerate(ordering):
-        if i == 1000: break
+    for p1, p2 in ordering[:1000]:
         circuits = connect(circuits, p1, p2)
 
-    lengths = [len(circuit) for circuit in sorted(circuits, key=len, reverse=True)]
-    return math.prod(lengths[:3])
+    return math.prod(len(circuit) for circuit in sorted(circuits, key=len, reverse=True)[:3])
 
 
 def part2():
